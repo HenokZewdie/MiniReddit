@@ -43,14 +43,15 @@
 <table class="table table-hover">
     <tr>
         <th>Link</th>
-        <th>User</th>
-        <th>Date</th>
+        <th><a href ="user">User</a></th>
+        <th><a href ="date">Date</a></th>
     </tr>
     <div th:each="mylink : ${values}">
         <tr>
-            <td><a th:text = "${mylink.link}" th:href="@{${mylink.link}}"></a></td>
+            <td><p th:text = "${mylink.title}"></p>
+                <a th:text = "${mylink.link}" th:href="@{${mylink.link}}"></a></td>
             <td th:text = "${mylink.userName}"></td>
-            <td th:text = "${mylink.date}"></td>
+            <td th:text = "${#dates.format(mylink.date, 'MMM-dd-yyyy')}"></td>  <!-- #dates.format(sprint.releaseDate, 'dd-MMM-yyyy')-->
         </tr>
     </div>
 </table>

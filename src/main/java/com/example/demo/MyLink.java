@@ -13,11 +13,14 @@ import java.util.Date;
 public class MyLink {
 
 
-    private Account acct;
+    //private Account acct;
     private String userName;
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private int id;
+    private String title;
     private String link;
-    private String date;
+    private Date date;
 
     public String getUserName() {
         return userName;
@@ -35,19 +38,35 @@ public class MyLink {
         this.link = link;
     }
 
-    public String getDate() {
+    public Date getDate() {
         return date;
     }
 
-    public void setDate(String date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 
-    public Account getAcct() {
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    /*public Account getAcct() {
         return acct;
     }
 
     public void setAcct(Account acct) {
         this.acct = acct;
-    }
+    }*/
 }
